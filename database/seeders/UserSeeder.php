@@ -14,10 +14,9 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            // sesuaikan dengan kolom yang ada di migration tb_user kamu ya..
-            'nama_lengkap' => 'Administrator', 
-            'username' => 'admin',
-            'password' => Hash::make('admin123'), // ini wajib pake Hash::make biar dienkripsi
+            'nama_lengkap' => 'Administrator',
+            'username' => 'admin123',
+            'password' => Hash::make('123'),
             'role' => 'admin',
         ]);
     }

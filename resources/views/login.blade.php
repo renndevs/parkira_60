@@ -31,7 +31,6 @@
 
             <form action="{{ url('/login') }}" method="POST" class="space-y-5">
                 @csrf
-
                 <div>
                     <label for="username" class="block text-sm font-medium text-slate-700 mb-1.5">Username</label>
                     <input type="text" id="username" name="username" required
