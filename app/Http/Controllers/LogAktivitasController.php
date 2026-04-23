@@ -25,8 +25,11 @@ class LogAktivitasController extends Controller
 
         $logs = $query->get();
 
-        $users = User::all();
-
+        // $users = User::all();
+        $users = User::paginate(10);
         return view('admin.logAktivitas', compact('logs', 'users'));
+
+
+        // return view('admin.logAktivitas', compact('logs', 'users'));
     }
 }

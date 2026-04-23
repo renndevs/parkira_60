@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
-use Carbon\Carbon;
 
 class LaporanController extends Controller
 {
@@ -27,7 +26,7 @@ class LaporanController extends Controller
 
         return view('owner.laporan', compact('laporans', 'tgl_awal', 'tgl_akhir', 'totalPendapatan', 'totalKendaraan'));
     }
-    
+
     public function cetak(Request $request)
     {
         $tgl_awal = $request->tgl_awal;

@@ -18,14 +18,14 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-})->name('login')->middleware('guest');
+})->name('login');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/lupa-password', function () {
     return view('lupa-password');
-})->middleware('guest');
+});
 
 // Route Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
