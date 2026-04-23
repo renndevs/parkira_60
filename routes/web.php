@@ -13,11 +13,19 @@ use App\Http\Controllers\LaporanController;
 
 // Route Halaman Login & Otentikasi
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/login', function () {
     return view('login');
-})->name('login');
+})->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/lupa-password', function () {
+    return view('lupa-password');
+})->middleware('guest');
 
 // Route Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
